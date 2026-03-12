@@ -19,7 +19,7 @@
 
 ## 🎯 Software a Ser Desenvolvido
 
-(Descreva brevemente a aplicação que será desenvolvida e seu objetivo.)
+Um guia didático e prático (guia de auxílio N/A, aplicação web) para auxiliar os professores a como interagir em sala com crianças neurodivergente, com foco no espectro autista
 
 ---
 
