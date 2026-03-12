@@ -10,10 +10,10 @@
 
 | Campo | Informação |
 | ------- | ----------- |
-| **Nome do Grupo** | *(preencher)* |
-| **Integrantes** | *(listar todos)* |
-| **E-mail de contato** | *(preencher)* |
-| **Comunidade parceira** | *(preencher)* |
+| **Nome do Grupo** | *Rock* |
+| **Integrantes** | *Arthur Melo Vieira, Cauan Moronhe Lopes, Gustavo Rocha Nicoletti Pinto, Otavio Morais Santos, Yori Eduardo Domingues Martins* |
+| **E-mail de contato** | *otavio.morais@sga.pucminas.br* |
+| **Comunidade parceira** | *Escola Aprova Ltda – (Ruth See)* |
 
 ---
 
