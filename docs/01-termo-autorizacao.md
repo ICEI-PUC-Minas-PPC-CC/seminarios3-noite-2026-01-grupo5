@@ -15,20 +15,20 @@
 
 | Campo | Informação |
 | ------- | ----------- |
-| Nome do Grupo | |
-| Integrantes | |
-| E-mail de contato | |
-| Telefone de contato | |
+| Nome do Grupo |Rock |
+| Integrantes |Arthur Melo Vieira, Cauan Moronhe Lopes, Fábio Henrique Esprovieri Filho, Gustavo Rocha Nicoletti Pinto, Otavio Morais Santos, Yori Eduardo Domingues Martins |
+| E-mail de contato | otavio.morais@sga.pucminas.br|
+| Telefone de contato |(35) 9 99352302 |
 
 ## 2. Dados da Comunidade / Instituição Parceira
 
 | Campo | Informação |
 | ------- | ----------- |
-| Nome da instituição | |
-| Endereço | |
-| Nome do responsável | |
-| Cargo/Função | |
-| Telefone ou e-mail da instituição | |
+| Nome da instituição |Escola Aprova Ltda – (Ruth See) |
+| Endereço |Rua Amazonas, 37 – Centro – Poços de Caldas/MG |
+| Nome do responsável |Elisabeth Soares Rocha Nicoletti Pinto |
+| Cargo/Função |Proprietária |
+| Telefone ou e-mail da instituição |bethnicoletti@hotmail.co, |
 
 > **Nota:** O professor responsável pela disciplina poderá entrar em contato com a comunidade/instituição acima indicada para fins de validação das informações, acompanhamento do desenvolvimento, ajustes no planejamento e alinhamentos necessários à entrega do software.
 
@@ -36,12 +36,12 @@
 
 | Campo | Informação |
 | ------- | ----------- |
-| Título/Tema da aplicação | |
-| Público-alvo | |
-| Nº estimado de usuários | |
-| Faixa etária do público | |
-| Tecnologias previstas | |
-| Hospedagem prevista | |
+| Título/Tema da aplicação |Guia de Auxílio N/A |
+| Público-alvo |Professores |
+| Nº estimado de usuários |20 |
+| Faixa etária do público |22+ |
+| Tecnologias previstas |HTML, JavaScript, CSS Tailwind, React e Git |
+| Hospedagem prevista | 25/5|
 
 ### Breve descrição da aplicação e sua finalidade
 
