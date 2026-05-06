@@ -1,0 +1,44 @@
+---
+name: Sync Subtree to Main
+on:
+  push:
+    branches:
+      - Projeto
+  workflow_dispatch: null
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Configurar Git
+        run: >
+          git config --global user.name "github-actions[bot]"
+
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Buscar todas as branches remotas
+        run: |
+          git fetch origin Projeto
+          git fetch origin main
+      - name: Configurar URL remota com autenticação
+        run: >
+          
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+      - name: Sync Subtree
+        run: >
+          git checkout main
+
+
+
+          if ! git subtree pull --prefix=src/Projeto origin Projeto --squash -m "Bot que trás os 🚂 da branch que tem os codigo lá 👍: Atualizando código"; then
+            echo "::error::Falha no subtree pull. Verifique se há conflitos ou se o prefix está correto."
+            exit 1
+          fi
+      - name: Push para main
+        run: |
+          git push origin main
