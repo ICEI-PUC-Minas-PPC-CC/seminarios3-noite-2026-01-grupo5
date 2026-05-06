@@ -1,0 +1,34 @@
+name: Sync Subtree to Main
+
+on:
+  push:
+    branches:
+      - desenvolvimento  
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write 
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Sync Subtree
+        run: |
+          
+          git checkout main
+          
+          
+          git subtree pull --prefix=src/Projeto origin Projeto --squash -m "Bot: Atualizando código"
+          
+          
+          git push origin main
