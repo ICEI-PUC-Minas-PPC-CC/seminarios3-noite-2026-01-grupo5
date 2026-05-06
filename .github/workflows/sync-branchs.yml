@@ -3,7 +3,7 @@ name: Sync Subtree to Main
 on:
   push:
     branches:
-      - desenvolvimento
+      - Projeto
 
   workflow_dispatch:
 
