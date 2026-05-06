@@ -41,7 +41,7 @@ jobs:
           git checkout main
 
           
-          if ! git subtree pull --prefix=src/Projeto origin Projeto --squash -m "Bot: Atualizando código [skip ci]"; then
+          if ! git subtree pull --prefix=src/Projeto origin Projeto --squash -m "Bot: Atualizando código"; then
             echo "::error::Falha no subtree pull. Verifique se há conflitos ou se o prefix está correto."
             exit 1
           fi
