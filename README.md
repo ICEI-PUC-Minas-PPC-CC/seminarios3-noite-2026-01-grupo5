@@ -12,7 +12,7 @@
 | ------- | ----------- |
 | **Nome do Grupo** | *Rock* |
 | **Integrantes** | *Arthur Melo Vieira, Cauan Moronhe Lopes, Fábio Henrique Esprovieri Filho, Gustavo Rocha Nicoletti Pinto, Otavio Morais Santos, Yori Eduardo Domingues Martins* |
-| **E-mail de contato** | *otavio.morais@sga.pucminas.br* | *cauan.lopes@sga.pucminas.br*
+| **E-mail de contato** | *otavio.morais@sga.pucminas.br*, *cauan.lopes@sga.pucminas.br* |
 | **Comunidade parceira** | *Escola Aprova Ltda – (Ruth See)* |
 
 ---
