@@ -15,10 +15,10 @@
 
 | Campo | Informação |
 | ------- | ----------- |
-| Nome do Grupo |Rock |
+| Nome do Grupo | Rock |
 | Integrantes |Arthur Melo Vieira, Cauan Moronhe Lopes, Fábio Henrique Esprovieri Filho, Gustavo Rocha Nicoletti Pinto, Otavio Morais Santos, Yori Eduardo Domingues Martins |
-| E-mail de contato | otavio.morais@sga.pucminas.br|
-| Telefone de contato |(35) 9 99352302 |
+| E-mail de contato | otavio.morais@sga.pucminas.br, cauan.lopes@sga.pucminas.br |
+| Telefone de contato |(35) 9 9935-2302, (35) 9 8800-8200 |
 
 ## 2. Dados da Comunidade / Instituição Parceira
 
@@ -26,9 +26,9 @@
 | ------- | ----------- |
 | Nome da instituição |Escola Aprova Ltda – (Ruth See) |
 | Endereço |Rua Amazonas, 37 – Centro – Poços de Caldas/MG |
-| Nome do responsável |Elisabeth Soares Rocha Nicoletti Pinto |
-| Cargo/Função |Proprietária |
-| Telefone ou e-mail da instituição |bethnicoletti@hotmail.co, |
+| Nome do responsável | Elisabeth Soares Rocha Nicoletti Pinto |
+| Cargo/Função | Proprietária |
+| Telefone ou e-mail da instituição |bethnicoletti@hotmail.com |
 
 > **Nota:** O professor responsável pela disciplina poderá entrar em contato com a comunidade/instituição acima indicada para fins de validação das informações, acompanhamento do desenvolvimento, ajustes no planejamento e alinhamentos necessários à entrega do software.
 
