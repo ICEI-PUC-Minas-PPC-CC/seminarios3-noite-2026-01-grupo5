@@ -1,5 +1,5 @@
 ---
-name: Sync Subtree to Main
+name: Sincronizar de Branch Projeto Para Main
 on:
   push:
     branches:
@@ -35,7 +35,7 @@ jobs:
 
 
 
-          if ! git subtree pull --prefix=src/Projeto origin Projeto --squash -m "Bot que trás os 🚂 da branch que tem os codigo lá 👍: Atualizando código"; then
+          if ! git subtree pull --prefix=src/Projeto origin Projeto --squash -m "Atualizando Código"; then
             echo "::error::Falha no subtree pull. Verifique se há conflitos ou se o prefix está correto."
             exit 1
           fi
