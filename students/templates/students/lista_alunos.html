@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Alunos - Portal Escola TEA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; }
+        .navbar { background-color: #4a90e2; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        
+        /* Estilo dos Cards de Alunos */
+        .aluno-card {
+            border: none;
+            border-radius: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+            height: 100%;
+        }
+        .aluno-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+
+        /* Avatar/Foto no Card */
+        .avatar-container {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto 15px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #e9f2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn-group-custom {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">Portal Escola TEA</a>
+            <div class="navbar-nav ms-auto flex-row gap-3 align-items-center">
+                <a class="nav-link" href="/">Início</a>
+                <a class="nav-link active" href="{% url 'lista_alunos' %}">Alunos</a>
+                <a class="nav-link" href="/guia/">Guia</a>
+                <a class="nav-link" href="/biblioteca/">Biblioteca</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold text-primary mb-0">👨‍🎓 Alunos Cadastrados</h2>
+                <p class="text-muted">Clique no prontuário para ver as notas pedagógicas.</p>
+            </div>
+            <a href="{% url 'cadastrar_aluno' %}" class="btn btn-success px-4 rounded-pill shadow-sm fw-bold">
+                + Novo Aluno
+            </a>
+        </div>
+
+        <!-- Grade de Cards -->
+        <div class="row g-4">
+            {% for aluno in alunos %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card aluno-card shadow-sm">
+                    <div class="card-body text-center">
+                        <!-- Foto do Aluno -->
+                        <div class="avatar-container">
+                            {% if aluno.foto %}
+                                <img src="{{ aluno.foto.url }}" alt="{{ aluno.nome }}">
+                            {% else %}
+                                👨‍🎓
+                            {% endif %}
+                        </div>
+
+                        <h5 class="fw-bold mb-1">{{ aluno.nome }}</h5>
+                        <p class="text-muted small mb-2">RA: {{ aluno.ra }}</p>
+                        <span class="badge bg-primary-subtle text-primary px-3 mb-4">Turma: {{ aluno.turma }}</span>
+
+                        <!-- Ações do Card -->
+                        <div class="btn-group-custom d-flex justify-content-center gap-2">
+                            <a href="{% url 'detalhe_aluno' aluno.pk %}" class="btn btn-primary btn-sm px-3 rounded-pill">
+                                Ver Prontuário
+                            </a>
+                            <a href="{% url 'editar_aluno' aluno.pk %}" class="btn btn-outline-warning btn-sm px-3 rounded-pill">
+                                Editar
+                            </a>
+                            <a href="{% url 'excluir_aluno' aluno.pk %}" class="btn btn-outline-danger btn-sm px-3 rounded-pill">
+                                Excluir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center py-5">
+                <div class="display-1 text-muted mb-3">🔎</div>
+                <h4 class="text-muted">Nenhum aluno encontrado.</h4>
+                <a href="{% url 'cadastrar_aluno' %}" class="btn btn-primary mt-3">Cadastrar Primeiro Aluno</a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Botão Voltar -->
+        <div class="mt-5 mb-5 text-center">
+            <a href="/" class="btn btn-link text-decoration-none text-secondary">
+                ← Voltar ao Painel Inicial
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
