@@ -1,0 +1,120 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  .gradient-text {
+    background: linear-gradient(90deg, #ff6b9d, #40e0d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .dashboard-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  .hero-section {
+    margin-top: 100px;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  .color-pink { color: #ff6b9d; }
+  .color-turquoise { color: #40e0d0; }
+  .color-yellow { color: #ffd700; }
+  .color-green { color: #32cd32; }
+  .quick-card {
+    background: #fff;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .quick-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  .btn-custom {
+    background: linear-gradient(90deg, #ff6b9d, #40e0d0);
+    border: none;
+    color: white;
+  }
+  .btn-custom:hover {
+    opacity: 0.85;
+  }
+</style>
+
+<div class="container hero-section">
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <h1 class="display-4 fw-bold gradient-text">Bem-vindo ao Mundo Infantil! 🌟</h1>
+      <p class="lead">Aqui você encontra diversão, aprendizado e muita alegria! 😊</p>
+    </div>
+  </div>
+
+  <!-- Cards de Estatísticas -->
+  <div class="row mb-5">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="dashboard-card p-4 text-center bg-white shadow-sm rounded">
+        <div class="emoji" style="font-size: 3rem;">🎓</div>
+        <div class="stat-number color-pink">{{ total_students }}</div>
+        <div class="fw-bold">Alunos</div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="dashboard-card p-4 text-center bg-white shadow-sm rounded">
+        <div class="emoji" style="font-size: 3rem;">📚</div>
+        <div class="stat-number color-turquoise">{{ total_resources }}</div>
+        <div class="fw-bold">Recursos</div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="dashboard-card p-4 text-center bg-white shadow-sm rounded">
+        <div class="emoji" style="font-size: 3rem;">📞</div>
+        <div class="stat-number color-yellow">{{ total_contacts }}</div>
+        <div class="fw-bold">Contatos</div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="dashboard-card p-4 text-center bg-white shadow-sm rounded">
+        <div class="emoji" style="font-size: 3rem;">🚨</div>
+        <div class="stat-number color-green">{{ emergency_contacts }}</div>
+        <div class="fw-bold">Emergência</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seção de Atalhos Rápidos -->
+  <div class="row mb-5">
+    <div class="col-12 text-center mb-4">
+      <h2 class="fw-bold">Atalhos Rápidos ⚡</h2>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12 mb-4">
+      <div class="quick-card p-4 text-center shadow-sm">
+        <div style="font-size: 3rem;">👩‍🎓</div>
+        <h4 class="mt-3">Alunos</h4>
+        <p>Gerencie todos os alunos cadastrados.</p>
+        <a href="{% url 'students:list' %}" class="btn btn-custom rounded-pill px-4">Acessar</a>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12 mb-4">
+      <div class="quick-card p-4 text-center shadow-sm">
+        <div style="font-size: 3rem;">📖</div>
+        <h4 class="mt-3">Recursos</h4>
+        <p>Explore materiais educativos.</p>
+        <a href="{% url 'resources:list' %}" class="btn btn-custom rounded-pill px-4">Acessar</a>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12 mb-4">
+      <div class="quick-card p-4 text-center shadow-sm">
+        <div style="font-size: 3rem;">📋</div>
+        <h4 class="mt-3">Contatos</h4>
+        <p>Lista de contatos importantes.</p>
+        <a href="{% url 'contacts:list' %}" class="btn btn-custom rounded-pill px-4">Acessar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
