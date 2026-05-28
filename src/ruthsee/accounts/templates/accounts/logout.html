@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block title %}Logout{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow" style="background-color: #ffffff;">
+                <div class="card-body text-center p-5" style="background-color: #e3f2fd;">
+                    <h3 class="card-title mb-3" style="color: #5c6bc0;">Tem certeza que deseja sair?</h3>
+                    <p class="card-text mb-4" style="color: #5c6bc0;">Você será desconectado do sistema</p>
+                    <form method="post" action="{% url 'accounts:logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary w-100 mb-2" style="background-color: #5c6bc0; border-color: #5c6bc0;">Sim, sair</button>
+                    </form>
+                    <a href="{% url 'core:home' %}" class="btn btn-outline-secondary w-100" style="color: #5c6bc0; border-color: #5c6bc0;">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
