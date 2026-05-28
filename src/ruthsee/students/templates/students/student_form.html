@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+{% block title %}Student Form{% endblock %}
+{% block content %}
+<h2>{% if object %}Edit{% else %}Add{% endif %} Student</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="{% url 'students:list' %}" class="btn btn-outline-secondary">Cancel</a>
+</form>
+{% endblock %}

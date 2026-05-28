@@ -1,0 +1,13 @@
+{% extends "core/base.html" %}
+{% block title %}Student Detail{% endblock %}
+{% block content %}
+<h2>{{ student.name }}</h2>
+<p>Email: {{ student.email }}</p>
+<p>Phone: {{ student.phone }}</p>
+{% if student.photo %}
+    <img src="{{ student.photo.url }}" alt="{{ student.name }}" style="max-width:200px;">
+{% endif %}
+<br>
+<a href="{% url 'students:update' student.pk %}" class="btn btn-secondary">Edit</a>
+<a href="{% url 'students:list' %}" class="btn btn-outline-primary">Back</a>
+{% endblock %}
