@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+{% block title %}Deletar Contato{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title" style="color: #5c6bc0;">Tem certeza que deseja deletar?</h2>
+          <p class="card-text text-muted">Esta ação não pode ser desfeita.</p>
+          <h4 class="mb-3" style="color: #333;">{{ object.name }}</h4>
+          <ul class="list-unstyled">
+            <li><strong>Email:</strong> {{ object.email }}</li>
+            <li><strong>Telefone:</strong> {{ object.phone }}</li>
+            <li><strong>Tipo:</strong> {{ object.get_type_display }}</li>
+          </ul>
+          <form method="post">
+            {% csrf_token %}
+            <div class="d-flex gap-2 mt-4">
+              <button type="submit" class="btn" style="background-color: #ff6b6b; color: white; border: none; padding: 10px 20px; border-radius: 5px;">Deletar</button>
+              <a href="{% url 'contacts:list' %}" class="btn btn-secondary" style="background-color: #6c757d; color: white; padding: 10px 20px; border-radius: 5px;">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
