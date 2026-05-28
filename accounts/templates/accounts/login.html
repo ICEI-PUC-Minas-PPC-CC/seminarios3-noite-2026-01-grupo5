@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center" style="background-color: #e3f2fd;">
+  <div class="card shadow-sm rounded" style="max-width: 400px; width: 100%; padding: 2rem;">
+    <h2 class="text-center mb-4" style="color: #5c6bc0;">Login</h2>
+    <form method="post" action="{% url 'accounts:login' %}">
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger" role="alert">
+          {% for error in form.non_field_errors %}
+            {{ error }}
+          {% endfor %}
+        </div>
+      {% endif %}
+      <div class="mb-3">
+        <label for="id_username" class="form-label" style="color: #7986cb;">Usuário</label>
+        <input type="text" name="username" id="id_username" class="form-control" required>
+        {% if form.username.errors %}
+          <div class="text-danger">
+            {% for error in form.username.errors %}
+              {{ error }}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="mb-3">
+        <label for="id_password" class="form-label" style="color: #7986cb;">Senha</label>
+        <input type="password" name="password" id="id_password" class="form-control" required>
+        {% if form.password.errors %}
+          <div class="text-danger">
+            {% for error in form.password.errors %}
+              {{ error }}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      {% if next %}
+        <input type="hidden" name="next" value="{{ next }}">
+      {% endif %}
+      <button type="submit" class="btn btn-primary w-100" style="background-color: #7986cb; border-color: #7986cb;">Entrar</button>
+    </form>
+    <div class="text-center mt-3">
+      <a href="{% url 'core:home' %}" style="color: #5c6bc0;">Home</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
