@@ -1,0 +1,10 @@
+[
+    {
+        "nome": "teste",
+        "usuario": "teste",
+        "email": "",
+        "senha_hash": "pbkdf2_sha256$210000$ZY1UtueI1xYfFsctlnfnbw$jgRSiBlIFODA9VQUbPhYjKzc2MDquKKHUgf8zntmkw0",
+        "cargo": "Professor",
+        "data_criacao": "12/06/2026"
+    }
+]
