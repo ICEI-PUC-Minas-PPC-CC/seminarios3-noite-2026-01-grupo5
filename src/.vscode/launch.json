@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Ruth See Escola",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "8110"
+            ],
+            "env": {
+                "ADAPTAESCOLA_PORT": "8110",
+                "ADAPTAESCOLA_STORAGE_SECRET": "ruth-see-dev-local-secret"
+            },
+            "justMyCode": true
+        }
+    ]
+}

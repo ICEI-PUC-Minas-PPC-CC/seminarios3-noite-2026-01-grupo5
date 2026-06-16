@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Iniciar Ruth See Escola",
+            "type": "shell",
+            "command": "${workspaceFolder}\\venv\\Scripts\\python.exe",
+            "args": [
+                "main.py",
+                "8110"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "ADAPTAESCOLA_PORT": "8110",
+                    "ADAPTAESCOLA_STORAGE_SECRET": "ruth-see-dev-local-secret"
+                }
+            },
+            "problemMatcher": []
+        }
+    ]
+}
